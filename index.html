@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Navidad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="arbolito">
+        <i class="fa-solid fa-star fa-3x fa-beat-fade"></i>
+        <div class="tallo"></div>
+        <h1>Feliz Navidad</h1>
+    </div>
+
+    <script>
+        const arbolito = document.querySelector('.tallo');
+        const colors = ['white', 'yellow', 'blue'];
+        const rows = 32;
+        setInterval(() => {
+            arbolito.innerHTML = '';
+            for(let i = 1; i <= rows; i++){
+                const p = document.createElement('p');
+                for(let j = 0; j < i; j++){
+                    const span = document.createElement('span');
+                    let char = '';
+                    if(i % 6 == 0){
+                        char = '=';
+                    }else{
+                        char = '*';
+                    }
+                    const textNode = document.createTextNode(char);
+                    span.appendChild(textNode);
+                    if(Math.round(Math.random()*2) == 1 && j != 0 && j != i-1 && i != rows && char == '*'){
+                        span.className = 'luz-on';
+                        span.style.color = colors[Math.floor(Math.random() * 3)];
+                    }
+                    if(char == '='){
+                        span.style.color = 'red';
+                        span.style.fontSize = '13pt';
+                    }
+                    p.appendChild(span);
+                }
+                arbolito.appendChild(p);
+            }
+        }, 500);
+    </script>
+</body>
+</html>

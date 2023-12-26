@@ -1,0 +1,35 @@
+body{
+    background-color: black;
+}
+
+.arbolito{
+    text-align: center;
+    letter-spacing: 12px;
+    color: rgb(0, 167, 0);
+    font-weight: bold;
+    margin-top: 70px;
+    font-size: 12pt;
+}
+
+.fa-star{
+    color: yellow;
+}
+
+.tallo{
+    margin-top: 5px;
+}
+
+p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.luz-on{
+    font-size: 15pt;
+    text-shadow: 0px 0px 4px rgba(255,0,0,0.8);
+}
+
+h1{
+    color: red;
+    font-family: 'Consolas';
+}
